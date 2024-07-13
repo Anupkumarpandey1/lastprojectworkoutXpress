@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Xpress</title>
     <style>
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.5;
@@ -17,6 +18,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            overflow-x: hidden;
         }
 
         .container {
@@ -555,6 +557,27 @@
             width: 100%;
         }
     }
+    .heroooo {
+            width: 450px;
+            height: 450px;
+            margin-top: -94px;
+            margin-bottom: -28px;
+        }
+
+        @media (max-width: 768px) {
+            .heroooo {
+                width: 320px;
+                height: 430px;
+            }
+        }
+        .zero{
+            width: 150px;
+        }
+        @media (max-width: 768px) {
+            .zero {
+                width: 115px;
+            }
+        }
 </style>
 
     </style>
@@ -562,7 +585,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="footer-brand"><img src="workout_express__1_-removebg-preview(1).png" alt="Fit Flex Logo" style="width:145px;"></div>
+            <div class="footer-brand"><img class="zero" src="workout_express__1_-removebg-preview(1).png" alt="Fit Flex Logo" ></div>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
@@ -581,7 +604,13 @@
         <div class="main-content">
             <div class="image-container">
                 <!-- Placeholder for an image -->
-                <img src="—Pngtree—gym gymnasium body building exercise_7579834.png" alt="Workout Image" style="width:100%; height:auto; margin-bottom: 2px; height: 445px; width: 477px; margin-top: -94px; margin-bottom: -28px;">
+                <!-- <img class="heroooo" src="—Pngtree—gym gymnasium body building exercise_7579834.png" alt="Workout Image" style="width:100%; height:auto; margin-bottom: 2px; height: 400px; width: 477px; margin-top: -94px; margin-bottom: -28px; -->
+                  <!-- @media (min-width: 1000px) { -->
+                   
+                        <!-- width: 350px; -->
+                    
+                <!-- }"> -->
+                <img class="heroooo" src="—Pngtree—gym gymnasium body building exercise_7579834.png" alt="Workout Image">
             </div>
             <div class="text-container" style="padding: 30px;">
                 <h1><b>YOU CAN NOW FLEX WITH US</b></h1>
