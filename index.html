@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Xpress</title>
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             line-height: 1.5;
             margin: 0;
@@ -13,7 +13,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-image: url("https://www.gymmarine.com/wp-content/uploads/2017/09/IMG_C3C381298781-1-1372x800.jpeg");
+            background-image: url('https://static.vecteezy.com/system/resources/previews/004/750/609/original/flat-design-abstract-background-soft-liquid-shapes-template-with-modern-gradient-background-colors-cool-aesthetic-background-design-suitable-for-social-media-post-mobile-app-banner-web-ads-free-vector.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -38,7 +38,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; /* Display the nav links as a row */
+            display: flex;
         }
 
         .nav-link {
@@ -51,6 +51,7 @@
             color: #211951;
             text-decoration: none;
             font-size: larger;
+            font-weight: bolder;
         }
 
         .nav-link:hover a {
@@ -80,8 +81,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 50px;
-            padding: 0 20px;
+            padding: 20px;
             background-color: rgba(255, 255, 255, 0);
             border-radius: 10px;
         }
@@ -114,110 +114,518 @@
 
         .footer {
             width: 100%;
-            height: 60px;
+            height: auto;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             border-top: 1px solid gray;
             background-color: rgba(255, 255, 255, 0.704);
             backdrop-filter: blur(5px);
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            padding: 20px;
+            text-align: center;
         }
 
-        .footer-left {
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            width: 100%;
+        }
+
+        .footer-brand {
+            margin-right: 20px;
         }
 
         .footer-social-media {
-            display: flex;
-            margin-left: 20px;
             list-style: none;
+            margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
         }
-        a{
-            color: #3f3093;
-            text-decoration: none;
-            font-size: large;
-            font-weight: bolder;
-  font-size-adjust: inherit;
-        }
-
-        .footer-brand img {
-            width: 130px;
-            height: auto;
-        }
-       
-
-        .footer-right {
-            padding-right: 10px;
-            font-size: medium;
-        }
-       
-
 
         .footer-social-media li {
             margin: 0 10px;
         }
 
+        .footer-social-media a {
+            color: #3f3093;
+            text-decoration: none;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .footer-right {
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .footer-right p {
+            margin-bottom: 10px;
+            font-size: small;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-toggle-label {
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
+
+        .nav-toggle-label span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #211951;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-toggle:checked + .nav-toggle-label span {
+            background-color: #f54242;
+        }
+
+        .nav-toggle:checked + .nav-toggle-label + .nav-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         @media screen and (max-width: 600px) {
+            .nav-toggle-label {
+                display: block;
+            }
+
             .nav-links {
-                flex-direction: column; /* Change to vertical layout on mobile */
-                align-items: flex-start; /* Align items to the start */
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
             }
 
             .nav-link {
-                margin: 10px 0; /* Add margin between vertical links */
+                margin: 10px 0;
+            }
+
+            .nav-toggle:checked + .nav-toggle-label {
+                background-color: transparent;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-left {
+                margin-bottom: 20px;
+            }
+
+            .footer-right {
+                text-align: left;
             }
         }
+
+        .section {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .section-item {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-item img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .text-blue-dark {
+            color: #211951;
+        }
+
+        .lg-title {
+            display: flex;
+            justify-content: center;
+        }
+      
+      
+<!--       trying shit -->
+      <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-image: url('https://static.vecteezy.com/system/resources/previews/004/750/609/original/flat-design-abstract-background-soft-liquid-shapes-template-with-modern-gradient-background-colors-cool-aesthetic-background-design-suitable-for-social-media-post-mobile-app-banner-web-ads-free-vector.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav-link {
+        margin: 0 10px;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .nav-link a {
+        color: #211951;
+        text-decoration: none;
+        font-size: larger;
+        font-weight: bolder;
+    }
+
+    .nav-link:hover a {
+        color: #f54242;
+    }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        background-color: #f54242;
+    }
+
+    .main-content {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 10px;
+    }
+
+    .text-container h1 {
+        margin-bottom: 35px;
+        color: #000000;
+    }
+
+    .text-container p {
+        margin-bottom: 25px;
+        color: #211951;
+    }
+
+    .cta-button {
+        background-color: #f54242;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        font-size: medium;
+    }
+
+    .cta-button:hover {
+        background-color: #d42f2f;
+    }
+
+    .footer {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid gray;
+        background-color: rgba(255, 255, 255, 0.704);
+        backdrop-filter: blur(5px);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-brand {
+        margin-right: 20px;
+    }
+
+    .footer-social-media {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-social-media li {
+        margin: 0 10px;
+    }
+
+    .footer-social-media a {
+        color: #3f3093;
+        text-decoration: none;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .footer-right {
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    .footer-right p {
+        margin-bottom: 10px;
+        font-size: small;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        cursor: pointer;
+        padding: 10px;
+        display: none;
+    }
+
+    .nav-toggle-label span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #211951;
+        margin: 5px 0;
+        transition: all 0.3s;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span {
+        background-color: #f54242;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label + .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 600px) {
+        .nav-toggle-label {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .nav-link {
+            margin: 10px 0;
+        }
+
+        .nav-toggle:checked + .nav-toggle-label {
+            background-color: transparent;
+        }
+
+        .footer-container {
+            flex-direction: column;
+        }
+
+        .footer-left {
+            margin-bottom: 20px;
+        }
+
+        .footer-right {
+            text-align: left;
+        }
+    }
+
+    .section {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .section-items {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .section-item {
+        width: 30%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .section-item img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .text-blue-dark {
+        color: #211951;
+    }
+
+    .lg-title {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .section-items {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-item {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .section-item {
+            width: 100%;
+        }
+    }
+</style>
+
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <div class="footer-brand"><img src="workout_express__1_-removebg-preview.png" alt="Fit Flex Logo"></div>
+            <div class="footer-brand"><img src="workout_express__1_-removebg-preview(1).png" alt="Fit Flex Logo" style="width:145px;"></div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <ul class="nav-links">
                 <li class="nav-link"><a href="personalized_workout.html">PERSONALIZED WORKOUT</a></li>
-                <li class="nav-link"><a href="weight_loss_veg.html">DIET</li>
+                <li class="nav-link"><a href="weight_loss_veg.html">DIET</a></li>
                 <li class="nav-link"><a href="fromscratch.html">TRAINING PLANS</a></li>
-                <li class="nav-link" ><a href="suggestion.html">SUGGESTIONS</a></li>
+                <li class="nav-link"><a href="suggestion.html">SUGGESTIONS</a></li>
                 <li class="nav-link"><a href="contact_us.html">CONTACT US</a></li>
                 <li class="nav-link"><a href="bmi_cal.html">BMI CALCULATOR</a></li>
             </ul>
         </header>
-        <BR></BR>
-        <BR></BR>
-        <BR></BR>
         <div class="main-content">
             <div class="image-container">
+                <!-- Placeholder for an image -->
+                <img src="—Pngtree—gym gymnasium body building exercise_7579834.png" alt="Workout Image" style="width:100%; height:auto; margin-bottom: 2px; height: 445px; width: 477px; margin-top: -94px; margin-bottom: -28px;">
             </div>
-            <div class="text-container" style="padding: 60px 0;">
-                <h1>YOU CAN NOW FLEX WITH US</h1>
-                <p>
-                   YOU CAN START THE TEST
-                    <br>
-                                          AT <span style="color: #f54242;">START TEST</span>
-                </p>
-                <button class="cta-button" ><a href="personalized_workout.html" style="color: white; text-decoration: none;">START TEST</a></button>
+            <div class="text-container" style="padding: 30px;">
+                <h1><b>YOU CAN NOW FLEX WITH US</b></h1>
+                <p><b>YOU CAN START THE TEST</b><br>AT <span style="color: #f54242;"><b>START TEST</b></span></p>
+                <button class="cta-button"><a href="personalized_workout.html" style="color: white; text-decoration: none;">START TEST</a></button>
             </div>
         </div>
-        <footer class="footer">
-            <div class="footer-left">
-                <div class="footer-brand" style="padding-left: 10px;"><t>[ Workout Xpress ]</t> </div>
-                <ul class="footer-social-media"> 
-                    <li class="icon-linkedin">LinkedIn</li>
-                    <li class="icon-facebook">Facebook</li>
-                    <li class="icon-instagram">Instagram</li>
-                    <li class="icon-twitter">Twitter</li>
-                </ul>
+        <section class="section">
+            <div class="container">
+                <h2 class="lg-title">Achieve Your Fitness Goals</h2>
+                <div class="section-items">
+                    <div class="section-item">
+                        <img src="exercise_2159342.png" alt="Fitness Image 1">
+                        <h5 class="text-blue-dark">Custom Workout Plans</h5>
+                        <p>Get personalized workout plans tailored to your fitness goals and preferences. Start seeing results with routines designed just for you.</p>
+                    </div>
+                    <div class="section-item">
+                        <img src="health-check_17085144.png" alt="Fitness Image 2">
+                        <h5 class="text-blue-dark">Nutrition Guidance</h5>
+                        <p>Our expert nutritionists provide customized diet plans to complement your workouts, ensuring you get the best results.</p>
+                    </div>
+                    <div class="section-item">
+                        <img src="success_11350895.png" alt="Fitness Image 3">
+                        <h5 class="text-blue-dark">Progress Tracking</h5>
+                        <p>Track your fitness journey with our comprehensive progress tracking tools. Stay motivated as you watch your improvements over time.</p>
+                    </div>
+                </div>
             </div>
-            <div class="footer-right">
-                <div style="font-style: italic; padding-right: 20px;">OWN YOUR PERSONAL TRAINER</div>
-                <div style="font-size: large;">Workout Xpress</div>
-            </div>
-        </footer>
+        </section>
     </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="workout_express__1_-removebg-preview(1).png" alt="Workout Xpress Logo" style="height: 100px;">
+            </div>
+            <ul class="footer-social-media">
+                <li><a href="https://github.com/Anupkumarpandey1" target="_blank"><img src="github-mark.png" alt="GitHub" style="height: 40px;"></a></li>
+                <li><a href="https://www.linkedin.com/in/anup-pandey-b9b118282/" target="_blank"><img src="linkedin.png" alt="LinkedIn" style="height: 40px;"></a></li>
+                <li><a href="anupkumarpandey321@gmail.com"><img src="email.png" alt="Email" style="height: 40px;"></a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <p>&copy; 2024 Workout Xpress. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
