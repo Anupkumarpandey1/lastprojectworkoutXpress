@@ -69,7 +69,7 @@
         /* Navigation Bar Styles */
         nav {
             background-color: #312f2fd1;
-            padding: 48px 0; /* Increased padding top and bottom */
+            padding: 50px 0; /* Increased padding top and bottom */
             text-align: center;
             margin-bottom: 20px; /* Add margin bottom for spacing */
             border-bottom: 2px solid #ddd; /* Add bottom border */
@@ -118,20 +118,131 @@ h2::after {
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
     z-index: -1; /* Push the underline behind the text */
 }
+ .navbar {
+            background-color: #333;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 80px;
+        }
 
+        /* Navbar links */
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        /* Navbar link hover effect */
+        .navbar a:hover {
+            color: #407920;
+        }
+
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+        }
+
+        /* Dropdown button style */
+        .dropdown .dropbtn {
+            color: white;
+            background-color: inherit;
+            border: none;
+            cursor: pointer;
+            padding: 15px 20px;
+            font-size: 18px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }/* Dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+            top: 50px;
+            left: 0;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style dropdown links */
+        .dropdown-content a {
+            color: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Dropdown link hover effect */
+        .dropdown-content a:hover {
+            background-color: #407920;
+            color: #fff;
+        }
+
+        /* Adding a subtle animation to the menu items */
+        .navbar a, .dropdown .dropbtn {
+            position: relative;
+        }
+
+        .navbar a:before, .dropdown .dropbtn:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 3px;
+            background: #407920;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .navbar a:hover:before, .dropdown .dropbtn:hover:before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#Tag" style="background-color: #000000;">Personalized Workout</a>
-        <a href="#monday" style="background-color: #4CAF50;">Monday</a>
-        <a href="#tuesday" style="background-color: #f44336;">Tuesday</a>
-        <a href="#wednesday" style="background-color: #2196F3;">Wednesday</a>
-        <a href="#thursday" style="background-color: #FFC107;">Thursday</a>
-        <a href="#friday" style="background-color: #9C27B0;">Friday</a>
-        <a href="#saturday" style="background-color: #c78773;">Saturday</a>
-        <a href="#sunday" style="background-color: #795548;">Sunday</a>
-    </nav>
+    <div class="navbar">
+        <a href="#">Your Daily Add-Ons</a>
+        <div class="dropdown">
+            <button class="dropbtn">Select Day</button>
+            <div id="day-select-container" class="dropdown-content">
+                <a href="#monday">Day 1: Monday</a>
+                <a href="#tuesday">Day 2: Tuesday</a>
+                <a href="#wednesday">Day 3: Wednesday</a>
+                <a href="#thursday">Day 4: Thursday</a>
+                <a href="#friday">Day 5: Friday</a>
+                <a href="#saturday">Day 6: Saturday</a>
+                <a href="#sunday">Day 7: Sunday</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToDay() {
+            const selectedDay = document.getElementById("day-select").value;
+            const dayElement = document.getElementById(selectedDay);
+            dayElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.getElementById("day-select").addEventListener("change", function() {
+            const selectedDay = this.value;
+            const scrollTo = document.querySelector(`a[href="#${selectedDay}"]`);
+            if (scrollTo) {
+                scrollTo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    </script>
     <div class="container" id="Tag">
         <div class="card" id="monday">
             <h2>Monday: High-Intensity Interval Training (HIIT)</h2>
