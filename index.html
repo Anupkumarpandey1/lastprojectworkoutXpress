@@ -580,6 +580,34 @@
                 width: 115px;
             }
         }
+        /* Smooth and slow transition for the first image in the heroooo class */
+.heroooo {
+    transition: transform 1.5s ease-in-out;
+}
+
+
+
+/* Hover effect to make footer images larger */
+.footer-social-media img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-social-media img:hover {
+    transform: scale(1.2);
+}
+/* CSS for the transition effect */
+.section-items img {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section-items img.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 </style>
 
     </style>
@@ -658,5 +686,70 @@
             <p>&copy; 2024 Workout Xpress. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Smooth and slow transition for the first image in the heroooo class
+    const heroImage = document.querySelector(".heroooo");
+    if (heroImage) {
+        heroImage.style.transform = "scale(1.05)"; // Apply a slight scale-up effect
+    }
+
+    // Faster drop-down animation for the images in the section-item
+    const sectionImages = document.querySelectorAll(".section-item img");
+    sectionImages.forEach((img, index) => {
+        setTimeout(() => {
+            img.style.opacity = "1";
+            img.style.transform = "translateY(0)";
+        }, index * 200); // Stagger the animations
+    });
+});
+
+function isInView(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+
+    // Function to add 'in-view' class to images when they come into view
+   
+
+
+
+    let lastScrollTop = 0;
+
+    // Function to check if an element is in view
+    function isInView(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+
+    // Function to add 'in-view' class to images when they come into view
+    function handleScroll() {
+        const images = document.querySelectorAll('.sections-item img');
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Check if scrolling down
+        if (scrollTop > lastScrollTop) {
+            images.forEach(img => {
+                if (isInView(img)) {
+                    img.classList.add('in-view');
+                }
+            });
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    }
+
+    // Add event listener for scroll event
+    window.addEventListener('scroll', handleScroll);
+
+    // Run the handleScroll function once on page load
+    document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
 </body>
 </html>
