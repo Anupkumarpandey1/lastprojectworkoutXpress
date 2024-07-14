@@ -580,11 +580,11 @@
                 width: 115px;
             }
         }
-        /* Smooth and slow transition for the first image in the heroooo class */
+/*         /* Smooth and slow transition for the first image in the heroooo class */
 .heroooo {
     transition: transform 1.5s ease-in-out;
 }
-
+ */
 
 
 /* Hover effect to make footer images larger */
@@ -687,22 +687,22 @@
         </div>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    // Smooth and slow transition for the first image in the heroooo class
-    const heroImage = document.querySelector(".heroooo");
-    if (heroImage) {
-        heroImage.style.transform = "scale(1.05)"; // Apply a slight scale-up effect
-    }
+//         document.addEventListener("DOMContentLoaded", function() {
+//     // Smooth and slow transition for the first image in the heroooo class
+//     const heroImage = document.querySelector(".heroooo");
+//     if (heroImage) {
+//         heroImage.style.transform = "scale(1.05)"; // Apply a slight scale-up effect
+//     }
 
-    // Faster drop-down animation for the images in the section-item
-    const sectionImages = document.querySelectorAll(".section-item img");
-    sectionImages.forEach((img, index) => {
-        setTimeout(() => {
-            img.style.opacity = "1";
-            img.style.transform = "translateY(0)";
-        }, index * 200); // Stagger the animations
-    });
-});
+//     // Faster drop-down animation for the images in the section-item
+//     const sectionImages = document.querySelectorAll(".section-item img");
+//     sectionImages.forEach((img, index) => {
+//         setTimeout(() => {
+//             img.style.opacity = "1";
+//             img.style.transform = "translateY(0)";
+//         }, index * 200); // Stagger the animations
+//     });
+// });
 
 function isInView(element) {
         const rect = element.getBoundingClientRect();
